@@ -1,4 +1,4 @@
-package error;
+package CloudCourse.error;
 
 //包装器业务异常实现
 public class ProjectException extends Exception implements CommonError {

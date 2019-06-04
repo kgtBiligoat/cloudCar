@@ -60,6 +60,14 @@ export default {
     select(index, indexPath) {
       this.name = index
     }
+  },
+  mounted() {
+    axios.get('/api/').then(() => {
+      console.log(1)
+    })
+    .catch((err) => {
+      console.log(err)
+    })
   }
 }
 </script>
