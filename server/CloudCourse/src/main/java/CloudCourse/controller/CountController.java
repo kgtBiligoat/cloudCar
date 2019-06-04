@@ -12,14 +12,5 @@ import org.springframework.web.bind.annotation.*;
 @CrossOrigin(origins = {"*"},allowCredentials = "true")
 public class CountController extends BaseController {
 
-  @Autowired
-  private CountService countService;
-
-  @RequestMapping(value = "/record",method = {RequestMethod.GET})
-  @ResponseBody
-  public String countCar(){
-    System.out.println(1111);
-    return "hello world";
-  }
 
 }
