@@ -2,8 +2,8 @@
   <div id="app">
     <el-container>
       <el-header>
-        <img src="./assets/logo.png" style="width: 40px;height:25px; position: relative; top: 10px; left: -600px;">
-        <span style="position: relative; top: 3px; left: -600px;">
+        <img src="./assets/logo.png" style="width: 40px;height:25px; position: absolute; top: 16px; left: 10px;">
+        <span style="position: absolute; top: 0px; left: 50px;">
           <span>云计算课程</span>  
           <span>SE</span>
           <span>5035</span>
@@ -16,38 +16,50 @@
             default-active="1"
             class="el-menu-vertical-demo"
             style="height: 100%;"
+            @select="select"
           >
-            <el-menu-item index="1">
+            <el-menu-item index="项目介绍">
               <span slot="title">项目介绍</span>
             </el-menu-item>
-            <el-menu-item index="2">
+            <el-menu-item index="车辆统计">
               <span slot="title">车辆统计</span>
             </el-menu-item>
-            <el-menu-item index="3">
+            <el-menu-item index="轨迹重现">
               <span slot="title">轨迹重现</span>
             </el-menu-item>
-            <el-menu-item index="4">
+            <el-menu-item index="错误报警">
               <span slot="title">错误报警</span>
             </el-menu-item>
-            <el-menu-item index="5">
+            <el-menu-item index="相遇次数">
               <span slot="title">相遇次数</span>
             </el-menu-item>
           </el-menu>`
         </el-aside>
-        <el-main style="height: 700px;">Main</el-main>
+        <el-main style="height: 700px;">
+          <title-bar :name="name"></title-bar>
+        </el-main>
       </el-container>
     </el-container>
   </div>
 </template>
 
 <script>
-// import headerBar from './components/header.vue'
-// import siderBar from './components/sideberBar' 
+import titleBar from './components/title.vue'
+import axios from 'axios'
 export default {
   name: 'App',
+  data() {
+    return {
+      name: '项目介绍'
+    }
+  },
   components: {
-    headerBar,
-    siderBar
+    titleBar
+  },
+  methods: {
+    select(index, indexPath) {
+      this.name = index
+    }
   }
 }
 </script>
@@ -79,8 +91,6 @@ body {
   height: 100%;;
   background-color: #E9EEF3;
   color: #333;
-  text-align: center;
-  line-height: 160px;
 }
 
 </style>
