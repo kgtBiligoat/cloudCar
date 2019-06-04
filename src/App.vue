@@ -13,7 +13,7 @@
       <el-container>
         <el-aside width="200px" style="height: 700px;">
            <el-menu
-            default-active="1"
+            :default-active="name"
             class="el-menu-vertical-demo"
             style="height: 100%;"
             @select="select"
@@ -33,7 +33,7 @@
             <el-menu-item index="相遇次数">
               <span slot="title">相遇次数</span>
             </el-menu-item>
-          </el-menu>`
+          </el-menu>
         </el-aside>
         <el-main style="height: 700px;">
           <title-bar :name="name"></title-bar>

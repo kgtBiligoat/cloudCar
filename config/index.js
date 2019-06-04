@@ -13,16 +13,13 @@ module.exports = {
         proxyTable: {
             '/api': {
                 target: "http://localhost:8090",
+                changeOrigin: true,
+                　　　　　pathRewrite: { // 如果接口本身没有/api需要通过pathRewrite来重写了地址
+                    　　　　　
+                    '^/api': ''
+                }
             }
         },
-
-        // Various Dev Server settings
-        host: 'localhost', // can be overwritten by process.env.HOST
-        port: 8080, // can be overwritten by process.env.PORT, if port is in use, a free one will be determined
-        autoOpenBrowser: false,
-        errorOverlay: true,
-        notifyOnErrors: true,
-        poll: false, // https://webpack.js.org/configuration/dev-server/#devserver-watchoptions-
 
 
         /**

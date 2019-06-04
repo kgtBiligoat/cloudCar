@@ -17,9 +17,9 @@ public class CountController extends BaseController {
 
   @RequestMapping(value = "/record",method = {RequestMethod.GET})
   @ResponseBody
-  public CommonReturnType countCar(){
-    countService.countCar(1,"11",11L);
-    return CommonReturnType.create(null);
+  public String countCar(){
+    System.out.println(1111);
+    return "hello world";
   }
 
 }
