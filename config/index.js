@@ -13,6 +13,10 @@ module.exports = {
     proxyTable: {
       '/api': {
         target: "http://localhost:8090",
+        changeOrigin: true,
+　　　　　pathRewrite: {// 如果接口本身没有/api需要通过pathRewrite来重写了地址
+　　　　　   '^/api': ''
+        }
       }
     },
 

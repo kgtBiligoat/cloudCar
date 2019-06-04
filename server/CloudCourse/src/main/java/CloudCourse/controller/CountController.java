@@ -19,10 +19,8 @@ public class CountController {
 
   @RequestMapping(value = "/record",method = {RequestMethod.GET})
   @ResponseBody
-  public String countCar(@RequestParam(name = "placeId")Integer placeId,
-                                   @RequestParam(name = "eId")String eId,
-                                   @RequestParam(name = "time")Long time){
-
+  public String countCar(){
+    System.out.println(1111);
     return "hello world";
   }
 
