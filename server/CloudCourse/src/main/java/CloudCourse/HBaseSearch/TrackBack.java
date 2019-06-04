@@ -1,6 +1,6 @@
 package CloudCourse.HBaseSearch;
 
-import hbase.HBaseConf;
+import CloudCourse.hbase.HBaseConf;
 import org.apache.hadoop.hbase.TableName;
 import org.apache.hadoop.hbase.client.*;
 import org.apache.hadoop.hbase.filter.CompareFilter;

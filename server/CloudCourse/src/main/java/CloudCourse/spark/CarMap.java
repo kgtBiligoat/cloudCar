@@ -1,6 +1,6 @@
 package CloudCourse.spark;
 
-import data.Record;
+import CloudCourse.service.model.RecordModel;
 import org.apache.hadoop.hbase.Cell;
 import org.apache.hadoop.hbase.CellUtil;
 import org.apache.hadoop.hbase.client.Result;
@@ -9,8 +9,8 @@ import org.apache.hadoop.hbase.util.Bytes;
 import java.util.List;
 
 public class CarMap {
-    public Record resultMapToRecord(Result result){
-        Record record = new Record();
+    public RecordModel resultMapToRecord(Result result){
+        RecordModel record = new RecordModel();
         //1.分解行键
         String rowKey = Bytes.toString(result.getRow());
         record.setEid(rowKey);

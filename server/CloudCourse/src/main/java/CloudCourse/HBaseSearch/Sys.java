@@ -1,6 +1,7 @@
 package CloudCourse.HBaseSearch;
 
-import hbase.HBaseConf;
+import CloudCourse.hbase.HBaseConf;
+import CloudCourse.spark.DateTransform;
 import org.apache.hadoop.hbase.TableName;
 import org.apache.hadoop.hbase.client.*;
 import org.apache.hadoop.hbase.filter.CompareFilter;
@@ -8,7 +9,6 @@ import org.apache.hadoop.hbase.filter.Filter;
 import org.apache.hadoop.hbase.filter.RegexStringComparator;
 import org.apache.hadoop.hbase.filter.RowFilter;
 import org.apache.hadoop.hbase.util.Bytes;
-import spark.DateTransform;
 
 import java.io.BufferedReader;
 import java.io.IOException;
