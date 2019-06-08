@@ -23,7 +23,7 @@ export default {
     methods: {
       async search() {
         let data = await axios.get('/api/we')
-        consoel.log(data)
+        console.log(data)
       }
     },
     mounted() {
