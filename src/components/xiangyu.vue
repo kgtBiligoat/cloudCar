@@ -29,7 +29,7 @@ export default {
         async search() {
           let data = await axios.get('/api/meetCar', {
             params: {
-              eid: this.msg
+              eId: this.msg
             }
           })
 
