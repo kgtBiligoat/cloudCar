@@ -1,7 +1,7 @@
 <template>
     <div>
     <div class="error">
-      <el-input v-model="msg" style="width: 400px;margin-right: 20px;" placeholder="请输入Eid"></el-input>
+      <el-input v-model="msg" style="width: 400px;margin-right: 20px;" placeholder="请输入placeid"></el-input>
       <el-button type="primary" @click="search">查询</el-button>    
 
     </div>      
@@ -22,8 +22,14 @@ export default {
         }
     },
     methods: {
-        search() {
-        
+        async search() {
+            let data = await axios.get('/api/count', {
+                params: {
+                    placeId: this.msg
+                }
+            }) 
+
+            console.log(data)
         }
     }
 }
