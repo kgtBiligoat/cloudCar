@@ -17,8 +17,8 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @Controller
-@RequestMapping("")
-@CrossOrigin(origins = {"*"},allowCredentials = "true")
+@RequestMapping("/")
+//@CrossOrigin(origins = {"*"},allowCredentials = "true")
 public class CountController extends BaseController {
 
   @Autowired
@@ -26,15 +26,11 @@ public class CountController extends BaseController {
 
   @RequestMapping(value = "/count",method = {RequestMethod.GET})
   @ResponseBody
-  public CommonReturnType countCar(@RequestParam(name = "placeId")Integer placeId) throws IOException {
+  public List<CountModel> countCar(@RequestParam(name = "placeId")Integer placeId) throws IOException {
     List<CountModel> countModels = countService.countCar(placeId );
 
-    List<CountVO> countVOList = countModels.stream().map(countModel -> {
-      CountVO countVO = this.convertVOFromModel(countModel);
-      return countVO;
-    }).collect(Collectors.toList());
 
-    return CommonReturnType.create(countVOList);
+    return countModels;
   }
 
   private CountVO convertVOFromModel(CountModel countModel){
