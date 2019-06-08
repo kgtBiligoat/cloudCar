@@ -44,7 +44,7 @@ export default {
         async search() {
             let data = await axios.get('/api/rule', {
                 params:{
-                    start: this.etTime(this.startTime),
+                    start: this.getTime(this.startTime),
                     end: this.getTime(this.endTime),
                     placeId: this.msg
                 }
