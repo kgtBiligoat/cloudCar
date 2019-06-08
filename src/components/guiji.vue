@@ -60,8 +60,8 @@ export default {
                 }
             })
 
-            // console.log(data)
-            // this.data = data.data.data
+            console.log(data)
+            this.data = data.data.data
             // this.addMarker()
             // console.log(1)
         },
