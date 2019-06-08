@@ -1,7 +1,6 @@
-package CloudCourse.service.model;
+package CloudCourse.controller.viewobject;
 
-public class CountModel {
-
+public class CountVO {
   private String eid;
 
   private Long time;

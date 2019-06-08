@@ -1,26 +1,17 @@
-package CloudCourse.service.model;
+package CloudCourse.controller.viewobject;
 
-public class CountModel {
-
+public class ErrorVO {
   private String eid;
 
-  private Long time;
+  private String time;
+
+  private Integer placeId;
 
   private String address;
 
   private Double longitude;
 
   private Double latitude;
-
-  private Integer count;
-
-  public Integer getCount() {
-    return count;
-  }
-
-  public void setCount(Integer count) {
-    this.count = count;
-  }
 
   public String getEid() {
     return eid;
@@ -30,12 +21,20 @@ public class CountModel {
     this.eid = eid;
   }
 
-  public Long getTime() {
+  public String getTime() {
     return time;
   }
 
-  public void setTime(Long time) {
+  public void setTime(String time) {
     this.time = time;
+  }
+
+  public Integer getPlaceId() {
+    return placeId;
+  }
+
+  public void setPlaceId(Integer placeId) {
+    this.placeId = placeId;
   }
 
   public String getAddress() {
@@ -61,4 +60,5 @@ public class CountModel {
   public void setLatitude(Double latitude) {
     this.latitude = latitude;
   }
+
 }

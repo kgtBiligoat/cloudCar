@@ -2,6 +2,7 @@
 //
 //import CloudCourse.response.CommonReturnType;
 //import CloudCourse.service.CountService;
+//import CloudCourse.service.RecordService;
 //import CloudCourse.service.model.CountModel;
 //import org.springframework.beans.factory.annotation.Autowired;
 //import org.springframework.stereotype.Controller;
@@ -16,13 +17,12 @@
 //public class RecordController extends BaseController {
 //
 //  @Autowired
-//  private CountService countService;
+//  private RecordService recordService;
 //
 //  @RequestMapping(value = "/record",method = {RequestMethod.GET})
 //  @ResponseBody
-//  public CommonReturnType countCar(){
-//    CountModel countModel = countService.countCar(1,"12",12L);
-//    return CommonReturnType.create(countModel);
+//  public CommonReturnType recordSearch(){
+//    return CommonReturnType.create(null);
 //  }
 //
 //}
