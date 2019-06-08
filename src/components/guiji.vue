@@ -56,7 +56,7 @@ export default {
                 params: {
                     start: this.getTime(this.startTime),
                     end: this.getTime(this.endTime),
-                    address: this.msg
+                    eId: this.msg
                 }
             })
 
