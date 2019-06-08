@@ -18,25 +18,29 @@
             style="height: 100%;"
             @select="select"
           >
-            <el-menu-item index="项目介绍">
+            <el-menu-item index="项目介绍" @click="toRouter('index')">
               <span slot="title">项目介绍</span>
             </el-menu-item>
-            <el-menu-item index="车辆统计">
-              <span slot="title">车辆统计</span>
+            <el-menu-item index="过车统计" @click="toRouter('car')">
+              <span slot="title">过车统计</span>
             </el-menu-item>
-            <el-menu-item index="轨迹重现">
+            <el-menu-item index="轨迹重现" @click="toRouter('guiji')">
               <span slot="title">轨迹重现</span>
             </el-menu-item>
-            <el-menu-item index="错误报警">
-              <span slot="title">错误报警</span>
+            <el-menu-item index="错误数据" @click="toRouter('errMsg')">
+              <span slot="title">错误数据</span>
             </el-menu-item>
-            <el-menu-item index="相遇次数">
+            <el-menu-item index="相遇次数" @click="toRouter('xiangyu')">
               <span slot="title">相遇次数</span>
+            </el-menu-item>
+            <el-menu-item index="规则查询" @click="toRouter('guize')">
+              <span slot="title">规则查询</span>
             </el-menu-item>
           </el-menu>
         </el-aside>
         <el-main style="height: 700px;">
           <title-bar :name="name"></title-bar>
+          <router-view></router-view>
         </el-main>
       </el-container>
     </el-container>
@@ -59,6 +63,9 @@ export default {
   methods: {
     select(index, indexPath) {
       this.name = index
+    },
+    toRouter(name) {
+      this.$router.push(name)
     }
   },
   mounted() {
