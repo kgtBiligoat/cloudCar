@@ -5,6 +5,7 @@ import car from '@/components/car.vue'
 import guiji from '@/components/guiji.vue'
 import xiangyu from '@/components/xiangyu.vue'
 import index from '@/components/index.vue'
+import guize from '@/components/guize.vue'
 
 Vue.use(Router)
 
@@ -38,6 +39,11 @@ export default new Router({
         name: 'errMsg',
         component: errMsg
       },
+      {
+        path: '/guize',
+        name: 'guize',
+        component: guize
+      }
   ],
   mode: 'history'
 })

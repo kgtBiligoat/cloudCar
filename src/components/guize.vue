@@ -19,7 +19,7 @@
             <el-button type="primary" @click="search">查询</el-button>            
         </div>
 
-        <baidu-map class="map"></baidu-map>
+        <el-table></el-table>
     </div>
 </template>
 
@@ -27,12 +27,12 @@
 import Vue from 'vue';
 import axios from 'axios'
 export default {
-    name: 'guiji',
+    name: 'guize',
     data() {
         return {
-            msg: '',
             startTime: '',
-            endTime: ''
+            endTime: '',
+            msg: ''
         }
     },
     methods: {

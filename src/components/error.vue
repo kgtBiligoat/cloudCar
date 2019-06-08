@@ -1,11 +1,6 @@
 <template>
-  <div >
-    <div class="error">
-      <el-input v-model="msg" style="width: 400px;margin-right: 20px;" placeholder="请输入"></el-input>
-      <el-button type="primary">查询</el-button>    
-
-    </div>      
-    <el-table style="margin-top: 40px;"> 
+  <div >    
+    <el-table style="margin-top: 30px;"> 
           
     </el-table>  
   </div>
@@ -20,7 +15,12 @@ export default {
       msg: '',
       data: []
     }
-  }
+  },
+    methods: {
+      search() {
+        
+      }
+    }
 }
 </script>
 
