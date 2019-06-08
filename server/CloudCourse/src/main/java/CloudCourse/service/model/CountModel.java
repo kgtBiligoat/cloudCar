@@ -6,13 +6,21 @@ public class CountModel {
 
   private Long time = 0L;
 
-  private Integer placeId = 0;
-
   private String address = "";
 
   private Double longitude = (double) 0;
 
   private Double latitude = (double) 0;
+
+  private Integer count = 0;
+
+  public Integer getCount() {
+    return count;
+  }
+
+  public void setCount(Integer count) {
+    this.count = count;
+  }
 
   public String getEid() {
     return eid;
@@ -28,14 +36,6 @@ public class CountModel {
 
   public void setTime(Long time) {
     this.time = time;
-  }
-
-  public Integer getPlaceId() {
-    return placeId;
-  }
-
-  public void setPlaceId(Integer placeId) {
-    this.placeId = placeId;
   }
 
   public String getAddress() {

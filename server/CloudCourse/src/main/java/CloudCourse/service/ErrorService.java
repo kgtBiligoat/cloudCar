@@ -6,5 +6,5 @@ import java.io.IOException;
 import java.util.List;
 
 public interface ErrorService {
-  List<ErrorModel> findAllErrorData(String eId) throws IOException;
+  List<ErrorModel> findAllErrorData() throws IOException;
 }

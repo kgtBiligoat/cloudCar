@@ -17,7 +17,7 @@ import java.util.List;
 @Service
 public class ErrorServiceImpl implements ErrorService {
   @Override
-  public List<ErrorModel> findAllErrorData(String eId) throws IOException {
+  public List<ErrorModel> findAllErrorData() throws IOException {
     List<ErrorModel> errorModels = new ArrayList<>();
     Configuration configuration = HBaseConfiguration.create();
     Connection connection = ConnectionFactory.createConnection(configuration);
@@ -33,7 +33,7 @@ public class ErrorServiceImpl implements ErrorService {
     DateTransform dateTransform = new DateTransform();
     for(Result res : scanner){
       errorModel.setEid(sysmap.resultMapToRecord(res).getEid());
-      errorModel.setTime(sysmap.resultMapToRecord(res).getTime());
+      errorModel.setTime(dateTransform.DateTransform(String.valueOf(sysmap.resultMapToRecord(res).getTime())));
       errorModel.setAddress(sysmap.resultMapToRecord(res).getAddress());
       errorModel.setLatitude(sysmap.resultMapToRecord(res).getLatitude());
       errorModel.setLongitude(sysmap.resultMapToRecord(res).getLongitude());

@@ -25,7 +25,7 @@ export default {
         async search() {
             let data = await axios.get('/api/count', {
                 params: {
-                    placeId: this.msg
+                 placeId: this.msg
                 }
             }) 
 
