@@ -17,7 +17,7 @@ import java.util.List;
 @Service
 public class ErrorServiceImpl implements ErrorService {
   @Override
-  public List<ErrorModel> findAllErrorData(String eId) throws IOException {
+  public List<ErrorModel> findAllErrorData() throws IOException {
     List<ErrorModel> errorModels = new ArrayList<>();
     Configuration configuration = HBaseConfiguration.create();
     Connection connection = ConnectionFactory.createConnection(configuration);

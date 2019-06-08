@@ -64,7 +64,7 @@ public class MeetCar{
 //                    list.add(map.resultMapToRecord(result).getEid2());
 //                    list.add(map.resultMapToRecord(result).getCount());
                     JSONObject obj=new JSONObject();
-                    obj.put("eid", map.resultMapToRecord(result).getEid());
+//                    obj.put("eid", map.resultMapToRecord(result).getEid());
                     //obj.put("eid2", map.resultMapToRecord(result).getEid2());
                     obj.put("count", map.resultMapToRecord(result).getCount());
 //                  System.out.println(list);

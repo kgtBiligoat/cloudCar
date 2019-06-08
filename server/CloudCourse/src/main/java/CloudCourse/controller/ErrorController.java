@@ -25,8 +25,8 @@ public class ErrorController extends BaseController {
 
   @RequestMapping(value = "/error",method = {RequestMethod.GET})
   @ResponseBody
-  public CommonReturnType countCar() throws IOException {
-    List<ErrorModel> listErrorModel = errorService.findAllErrorData("s");
-    return CommonReturnType.create(listErrorModel);
+  public CommonReturnType errorData() throws IOException {
+    List<ErrorModel> errorModels = errorService.findAllErrorData();
+    return CommonReturnType.create(errorModels);
   }
 }
