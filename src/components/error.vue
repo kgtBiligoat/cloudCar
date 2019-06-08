@@ -24,7 +24,7 @@ export default {
       async search() {
         let data = await axios.get('/api/we')
         console.log(data)
-        this.data.data.data = data
+        this.data = data.data.data
       }
     },
     mounted() {

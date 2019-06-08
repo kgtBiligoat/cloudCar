@@ -6,11 +6,11 @@
 
     </div>      
     <el-table border style="margin-top: 30px;" :data="data" height="450"> 
-          <el-table-column label="placeId" prop=""></el-table-column>
-          <el-table-column label="address" prop=""></el-table-column>
-          <el-table-column label="count" prop=""></el-table-column>
-          <el-table-column label="longtitude" prop=""></el-table-column>
-          <el-table-column label="latitude" prop=""></el-table-column>
+          <el-table-column label="placeId" prop="placeId"></el-table-column>
+          <el-table-column label="address" prop="address"></el-table-column>
+          <el-table-column label="count" prop="count"></el-table-column>
+          <el-table-column label="longtitude" prop="longtitude"></el-table-column>
+          <el-table-column label="latitude" prop="latitude"></el-table-column>
     </el-table>  
     </div>
 </template>
@@ -34,6 +34,7 @@ export default {
             }) 
 
             console.log(data)
+            this.data = data.data.data
         }
     }
 }
