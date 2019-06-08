@@ -69,12 +69,7 @@ export default {
     }
   },
   mounted() {
-    axios.get('/api/').then(() => {
-      console.log(1)
-    })
-    .catch((err) => {
-      console.log(err)
-    })
+
   }
 }
 </script>

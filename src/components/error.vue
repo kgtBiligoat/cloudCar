@@ -1,6 +1,6 @@
 <template>
   <div >    
-    <el-table style="margin-top: 30px;" :data="data"> 
+    <el-table border style="margin-top: 30px;" :data="data"> 
           
     </el-table>  
   </div>

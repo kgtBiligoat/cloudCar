@@ -18,8 +18,8 @@
             <el-input v-model="msg" style="width: 200px;margin-right: 20px;" placeholder="请输入"></el-input>
             <el-button type="primary" @click="search">查询</el-button>            
         </div>
-
-        <baidu-map class="map"></baidu-map>
+<!-- 
+        <baidu-map class="map"></baidu-map> -->
     </div>
 </template>
 
@@ -38,6 +38,19 @@ export default {
     methods: {
         search() {
         
+        },
+        getTime(time) {
+            var y = time.getFullYear();  
+            var m = time.getMonth() + 1;  
+            m = m < 10 ? ('0' + m) : m;  
+            var d = time.getDate();  
+            d = d < 10 ? ('0' + d) : d;  
+            var h = time.getHours();  
+            var minute = time.getMinutes();  
+            minute = minute < 10 ? ('0' + minute) : minute; 
+            var second= time.getSeconds();  
+            second = minute < 10 ? ('0' + second) : second;  
+            return y + '-' + m + '-' + d+' '+h+':'+minute+':'+ second;  
         }
     }
 }
