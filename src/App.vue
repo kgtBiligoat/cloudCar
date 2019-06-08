@@ -18,9 +18,9 @@
             style="height: 100%;"
             @select="select"
           >
-            <el-menu-item index="项目介绍" @click="toRouter('index')">
+            <!-- <el-menu-item index="项目介绍" @click="toRouter('index')">
               <span slot="title">项目介绍</span>
-            </el-menu-item>
+            </el-menu-item> -->
             <el-menu-item index="过车统计" @click="toRouter('car')">
               <span slot="title">过车统计</span>
             </el-menu-item>

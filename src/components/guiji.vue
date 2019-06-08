@@ -15,10 +15,15 @@
                 style="margin-right: 20px;"
             >
             </el-date-picker>
-            <el-input v-model="msg" style="width: 200px;margin-right: 20px;" placeholder="请输入"></el-input>
+            <el-input v-model="msg" style="width: 200px;margin-right: 20px;" placeholder="请输入eid"></el-input>
             <el-button type="primary" @click="search">查询</el-button>            
         </div>
         <div id="allmap" v-bind:style="mapStyle"></div>
+        <el-table border :data="data" height="450">
+            <el-table-column label="address" prop="address"></el-table-column>
+            <el-table-column label="longitude" prop="longitude"></el-table-column>
+            <el-table-column label="latitude" prop="latitude"></el-table-column>           
+        </el-table>
 <!-- 
         <baidu-map class="map"></baidu-map> -->
     </div>
@@ -40,14 +45,24 @@ export default {
             },
             map: {},
             marker: {},
-            point: {}
+            point: {},
+            data: []
         }
     },
     methods: {
         async search() {
-            // let data = await axios.get('/api/')
-            this.addMarker()
-            console.log(1)
+            let data = await axios.get('/api/track',{
+                params: {
+                    start: this.getTime(this.startTime),
+                    end: this.getTime(this.endTime),
+                    address: this.msg
+                }
+            })
+
+            console.log(data)
+            this.data = data.data.data
+            // this.addMarker()
+            // console.log(1)
         },
         getTime(time) {
             var y = time.getFullYear();  
@@ -63,17 +78,31 @@ export default {
             return y + '-' + m + '-' + d+' '+h+':'+minute+':'+ second;  
         },
 
-        addMarker(point, name,mapInit,trackUnit) {
 
+        addMarkerEnd(point, name,trackUnit) {
+            if(name=="终点"){
+                if(carMk){//先判断第一次进来的时候这个值有没有定义，有的话就清除掉上一次的。然后在进行画图标。第一次进来时候没有定义也就不走这块，直接进行画图标
+                    mapInit.removeOverlay(carMk);
+                }
+                carMk = new BMap.Marker(point);  // 创建标注
+                carMk.setRotation(trackUnit.route);//trackUnit.route
+                this.map.addOverlay(carMk);               // 将标注添加到地图中
+                carMk.setAnimation(BMAP_ANIMATION_BOUNCE); //跳动的动画
+        
+            }
+        },
+
+        addMarker(point, name,trackUnit) {
+            if(name=="起点"){
                 // var myIcon = new BMap.Icon("css/img/startMap.svg", new BMap.Size(45,45),{
                 //     anchor: new BMap.Size(20, 45)//这句表示图片相对于所加的点的位置mapStart
                 //     // offset: new BMap.Size(-10, 45), // 指定定位位置
                 //     // imageOffset: new BMap.Size(0, 0 - 10 * 25) // 设置图片偏移
                 // });
-                this.marker = new BMap.Marker(this.point);  // 创建标注
+                this.marker = new BMap.Marker(point);  // 创建标注
                 this.map.addOverlay(this.marker);               // 将标注添加到地图中
                 this.marker.setAnimation(BMAP_ANIMATION_BOUNCE); //跳动的动画
-            
+            }
         },
 
         ready(){
@@ -86,7 +115,12 @@ export default {
             // var marker = new BMap.Marker(point);
             // map.addOverlay(marker);
         },
+        drew() {
 
+        },
+        getLocalTime(nS) {     
+            return new Date(parseInt(nS) * 1000).toLocaleString().replace(/:\d{1,2}$/,' ');     
+        }
     },     
     mounted() {
         this.ready()

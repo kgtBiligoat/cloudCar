@@ -53,6 +53,9 @@ export default {
             console.log(data)
 
             this.data = data.data.data
+            this.data.forEach((item) => {
+                item.time = this.getLocalTime(item.time)
+            })
         },
         getTime(time) {
             var y = time.getFullYear();  
@@ -66,6 +69,9 @@ export default {
             var second= time.getSeconds();  
             second = minute < 10 ? ('0' + second) : second;  
             return y + '-' + m + '-' + d+' '+h+':'+minute+':'+ second;  
+        },
+        getLocalTime(nS) {     
+            return new Date(parseInt(nS) * 1000).toLocaleString().replace(/:\d{1,2}$/,' ');     
         }
     }
 }
