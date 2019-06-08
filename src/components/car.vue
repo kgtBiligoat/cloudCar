@@ -9,7 +9,7 @@
           <el-table-column label="placeId" prop="placeId"></el-table-column>
           <el-table-column label="address" prop="address"></el-table-column>
           <el-table-column label="count" prop="count"></el-table-column>
-          <el-table-column label="longtitude" prop="longtitude"></el-table-column>
+          <el-table-column label="longitude" prop="longitude"></el-table-column>
           <el-table-column label="latitude" prop="latitude"></el-table-column>
     </el-table>  
     </div>

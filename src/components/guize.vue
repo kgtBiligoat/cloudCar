@@ -42,8 +42,7 @@ export default {
     },
     methods: {
         async search() {
-            console.log(2)
-            console.log(this.getTime(this.startTime))
+            
         },
         getTime(time) {
             var y = time.getFullYear();  
