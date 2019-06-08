@@ -67,6 +67,14 @@ export default {
     toRouter(name) {
       this.$router.push(name)
     }
+  },
+  mounted() {
+    axios.get('/api/').then(() => {
+      console.log(1)
+    })
+    .catch((err) => {
+      console.log(err)
+    })
   }
 }
 </script>

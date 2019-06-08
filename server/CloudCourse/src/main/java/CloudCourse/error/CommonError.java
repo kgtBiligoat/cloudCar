@@ -1,4 +1,4 @@
-package error;
+package CloudCourse.error;
 
 public interface CommonError {
     public int getErrCode();

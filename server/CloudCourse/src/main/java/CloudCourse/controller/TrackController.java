@@ -1,4 +1,5 @@
 package CloudCourse.controller;
 
-public class TrackController {
+public class TrackController extends BaseController{
+
 }
