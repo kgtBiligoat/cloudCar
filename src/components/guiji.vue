@@ -18,8 +18,8 @@
             <el-input v-model="msg" style="width: 200px;margin-right: 20px;" placeholder="请输入"></el-input>
             <el-button type="primary" @click="search">查询</el-button>            
         </div>
-
-        <baidu-map class="map"></baidu-map>
+<!-- 
+        <baidu-map class="map"></baidu-map> -->
     </div>
 </template>
 

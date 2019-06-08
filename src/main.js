@@ -10,9 +10,9 @@ import BaiduMap from 'vue-baidu-map'
 Vue.config.productionTip = false
 
 Vue.use(ElementUI)
-Vue.use(BaiduMap, {
-  ak:'WNk3ScAXfSTcG18Y0VXUVuhQcKhUEhcC'
-})
+// Vue.use(BaiduMap, {
+//   ak:'WNk3ScAXfSTcG18Y0VXUVuhQcKhUEhcC'
+// })
 
 /* eslint-disable no-new */
 new Vue({

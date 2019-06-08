@@ -19,7 +19,7 @@
             <el-button type="primary" @click="search">查询</el-button>            
         </div>
 
-        <el-table :data="data"></el-table>
+        <el-table border :data="data"></el-table>
     </div>
 </template>
 
