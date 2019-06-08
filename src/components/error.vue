@@ -25,6 +25,9 @@ export default {
         let data = await axios.get('/api/we')
         consoel.log(data)
       }
+    },
+    mounted() {
+      this.search()
     }
 }
 </script>
