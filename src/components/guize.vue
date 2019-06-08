@@ -44,8 +44,8 @@ export default {
         async search() {
             let data = await axios.get('/api/', {
                 params:{
-                    startTime: this.etTime(this.startTime),
-                    endTime: this.getTime(this.endTime),
+                    start: this.etTime(this.startTime),
+                    end: this.getTime(this.endTime),
                     placeId: this.msg
                 }
             })

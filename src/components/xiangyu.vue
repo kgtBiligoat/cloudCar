@@ -6,9 +6,9 @@
 
     </div>      
     <el-table border style="margin-top: 30px;" :data="data" height="450"> 
-      <el-table-column label="eid1" prop="eid1"></el-table-column>
-      <el-table-column label="eid2" prop="eid2"></el-table-column>
-      <el-table-column label="number" prop="number"></el-table-column> 
+      <el-table-column label="eid1" prop="eId1"></el-table-column>
+      <el-table-column label="eid2" prop="eId2"></el-table-column>
+      <el-table-column label="count" prop="count"></el-table-column> 
     </el-table>  
     </div>
 </template>
