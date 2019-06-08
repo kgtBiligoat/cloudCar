@@ -4,7 +4,7 @@
       <el-table-column label="eid" prop="eid"></el-table-column>
       <el-table-column label="time" prop="time"></el-table-column>
       <el-table-column label="address" prop="address"></el-table-column>
-      <el-table-column label="longtitude" prop="longtitude"></el-table-column>
+      <el-table-column label="longitude" prop="longitude"></el-table-column>
       <el-table-column label="latitude" prop="latitude"></el-table-column>
     </el-table>  
   </div>
