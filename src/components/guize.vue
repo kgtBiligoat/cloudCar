@@ -38,7 +38,21 @@ export default {
     },
     methods: {
         search() {
-        
+            console.log(2)
+            console.log(this.getTime(this.startTime))
+        },
+        getTime(time) {
+            var y = time.getFullYear();  
+            var m = time.getMonth() + 1;  
+            m = m < 10 ? ('0' + m) : m;  
+            var d = time.getDate();  
+            d = d < 10 ? ('0' + d) : d;  
+            var h = time.getHours();  
+            var minute = time.getMinutes();  
+            minute = minute < 10 ? ('0' + minute) : minute; 
+            var second= time.getSeconds();  
+            second = minute < 10 ? ('0' + second) : second;  
+            return y + '-' + m + '-' + d+' '+h+':'+minute+':'+ second;  
         }
     }
 }
