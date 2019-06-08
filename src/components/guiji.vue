@@ -19,7 +19,7 @@
             <el-button type="primary" @click="search">查询</el-button>            
         </div>
         <div id="allmap" v-bind:style="mapStyle"></div>
-        <el-table border :data="data" height="450">
+        <el-table border :data="data" height="450" style="margin-top: 30px;">
             <el-table-column label="address" prop="address"></el-table-column>
             <el-table-column label="longitude" prop="longitude"></el-table-column>
             <el-table-column label="latitude" prop="latitude"></el-table-column>           
