@@ -6,6 +6,7 @@ import CloudCourse.response.CommonReturnType;
 import CloudCourse.service.ErrorService;
 import CloudCourse.service.model.CountModel;
 import CloudCourse.service.model.ErrorModel;
+import org.json.JSONObject;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -20,21 +21,18 @@ import java.util.stream.Collectors;
 
 @Controller
 @RequestMapping("")
-@CrossOrigin(origins = {"*"},allowCredentials = "true")
-public class ErrorController extends BaseController {
+//@CrossOrigin(origins = {"*"},allowCredentials = "true")
+public class ErrorController {
 
   @Autowired
   private ErrorService errorService;
 
   @RequestMapping(value = "/error",method = {RequestMethod.GET})
   @ResponseBody
-  public CommonReturnType errorData() throws IOException {
+  public JSONObject errorData() throws IOException {
     List<ErrorModel> errorModels = errorService.findAllErrorData();
-    List<ErrorVO> errorVOList = errorModels.stream().map(errorModel -> {
-      ErrorVO errorVO = this.convertVOFromModel(errorModel);
-      return errorVO;
-    }).collect(Collectors.toList());
-    return CommonReturnType.create(errorVOList);
+    JSONObject jso = (JSONObject) JSONObject.stringToValue(errorModels.toArray().toString());
+    return jso;
   }
 
   private ErrorVO convertVOFromModel(ErrorModel e){
