@@ -42,7 +42,7 @@ export default {
     },
     methods: {
         async search() {
-            let data = await axios.get('/api/', {
+            let data = await axios.get('/api/rule', {
                 params:{
                     start: this.etTime(this.startTime),
                     end: this.getTime(this.endTime),
