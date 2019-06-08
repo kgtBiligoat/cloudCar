@@ -5,7 +5,7 @@
       <el-button type="primary" @click="search">查询</el-button>    
 
     </div>      
-    <el-table style="margin-top: 30px;"> 
+    <el-table style="margin-top: 30px;" :data="data"> 
           
     </el-table>  
     </div>

@@ -19,7 +19,7 @@
             <el-button type="primary" @click="search">查询</el-button>            
         </div>
 
-        <el-table></el-table>
+        <el-table :data="data"></el-table>
     </div>
 </template>
 
@@ -32,7 +32,8 @@ export default {
         return {
             startTime: '',
             endTime: '',
-            msg: ''
+            msg: '',
+            data: []
         }
     },
     methods: {
