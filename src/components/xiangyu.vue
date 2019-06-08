@@ -25,6 +25,7 @@ export default {
         }
     },
     methods: {
+      
         async search() {
           let data = await axios.get('/api/', {
             params: {

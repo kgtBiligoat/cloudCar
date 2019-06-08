@@ -18,6 +18,7 @@
             <el-input v-model="msg" style="width: 200px;margin-right: 20px;" placeholder="请输入"></el-input>
             <el-button type="primary" @click="search">查询</el-button>            
         </div>
+        <div id="allmap" v-bind:style="mapStyle"></div>
 <!-- 
         <baidu-map class="map"></baidu-map> -->
     </div>
@@ -32,12 +33,21 @@ export default {
         return {
             msg: '',
             startTime: '',
-            endTime: ''
+            endTime: '',
+            mapStyle:{
+                width:'100%',
+                height:'500px'
+            },
+            map: {},
+            marker: {},
+            point: {}
         }
     },
     methods: {
         async search() {
-            let data = await axios.get('/api/')
+            // let data = await axios.get('/api/')
+            this.addMarker()
+            console.log(1)
         },
         getTime(time) {
             var y = time.getFullYear();  
@@ -51,7 +61,35 @@ export default {
             var second= time.getSeconds();  
             second = minute < 10 ? ('0' + second) : second;  
             return y + '-' + m + '-' + d+' '+h+':'+minute+':'+ second;  
-        }
+        },
+
+        addMarker(point, name,mapInit,trackUnit) {
+
+                // var myIcon = new BMap.Icon("css/img/startMap.svg", new BMap.Size(45,45),{
+                //     anchor: new BMap.Size(20, 45)//这句表示图片相对于所加的点的位置mapStart
+                //     // offset: new BMap.Size(-10, 45), // 指定定位位置
+                //     // imageOffset: new BMap.Size(0, 0 - 10 * 25) // 设置图片偏移
+                // });
+                this.marker = new BMap.Marker(this.point);  // 创建标注
+                this.map.addOverlay(this.marker);               // 将标注添加到地图中
+                this.marker.setAnimation(BMAP_ANIMATION_BOUNCE); //跳动的动画
+            
+        },
+
+        ready(){
+            this.map = new BMap.Map('allmap');
+            this.point = new BMap.Point(116.3331398, 39.897445);
+            this.map.centerAndZoom(this.point, 14);
+            this.map.addControl(new BMap.MapTypeControl());
+            this.map.enableScrollWheelZoom(true);
+            this.map.enableDoubleClickZoom(true);
+            // var marker = new BMap.Marker(point);
+            // map.addOverlay(marker);
+        },
+
+    },     
+    mounted() {
+        this.ready()
     }
 }
 </script>
