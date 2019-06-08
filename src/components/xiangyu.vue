@@ -1,7 +1,7 @@
 <template>
     <div>
     <div class="error">
-      <el-input v-model="msg" style="width: 400px;margin-right: 20px;" placeholder="请输入"></el-input>
+      <el-input v-model="msg" style="width: 400px;margin-right: 20px;" placeholder="请输入eid"></el-input>
       <el-button type="primary" @click="search">查询</el-button>    
 
     </div>      
@@ -20,13 +20,20 @@ export default {
     name: 'xiangyu',
     data() {
         return {
-        msg: '',
-        data: []
+          msg: '',
+          data: []
         }
     },
     methods: {
         async search() {
-          
+          let data = await axios.get('/api/', {
+            params: {
+              eid: this.eid
+            }
+          })
+
+          console.log(data)
+          this.data = data.data.data
         }
     }
 }

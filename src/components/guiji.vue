@@ -37,7 +37,7 @@ export default {
     },
     methods: {
         async search() {
-        
+            let data = await axios.get('/api/')
         },
         getTime(time) {
             var y = time.getFullYear();  

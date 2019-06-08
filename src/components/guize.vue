@@ -15,7 +15,7 @@
                 style="margin-right: 20px;"
             >
             </el-date-picker>
-            <el-input v-model="msg" style="width: 200px;margin-right: 20px;" placeholder="请输入"></el-input>
+            <el-input v-model="msg" style="width: 200px;margin-right: 20px;" placeholder="请输入placeId"></el-input>
             <el-button type="primary" @click="search">查询</el-button>            
         </div>
 
@@ -42,7 +42,17 @@ export default {
     },
     methods: {
         async search() {
-            
+            let data = await axios.get('/api/', {
+                params:{
+                    startTime: this.etTime(this.startTime),
+                    endTime: this.getTime(this.endTime),
+                    placeId: this.msg
+                }
+            })
+
+            console.log(data)
+
+            this.data = data.data.data
         },
         getTime(time) {
             var y = time.getFullYear();  
