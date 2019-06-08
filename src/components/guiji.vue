@@ -51,16 +51,17 @@ export default {
     },
     methods: {
         async search() {
-            let data = await axios.get('/api/track',{
-                params: {
-                    start: this.getTime(this.startTime),
-                    end: this.getTime(this.endTime),
-                    address: this.msg
-                }
-            })
+            console.log(1)
+            // let data = await axios.get('/api/track',{
+            //     params: {
+            //         start: this.getTime(this.startTime),
+            //         end: this.getTime(this.endTime),
+            //         address: this.msg
+            //     }
+            // })
 
-            console.log(data)
-            this.data = data.data.data
+            // console.log(data)
+            // this.data = data.data.data
             // this.addMarker()
             // console.log(1)
         },
