@@ -21,7 +21,7 @@ public class CarMap {
             String qualifier = Bytes.toString(CellUtil.cloneQualifier(cell));
             String value = Bytes.toString(CellUtil.cloneValue(cell));
             switch(qualifier){
-                case "eid2" : record.setEid2(value); break;
+                //case "eid2" : record.setEid2(value); break;
                 case "count" : record.setCount(Integer.parseInt(value)); break;
             }
         }

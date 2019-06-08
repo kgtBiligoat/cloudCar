@@ -3,7 +3,7 @@ package CloudCourse.service.model;
 public class ErrorModel {
   private String eid = "";
 
-  private Long time = 0L;
+  private String time = "";
 
   private Integer placeId = 0;
 
@@ -21,11 +21,11 @@ public class ErrorModel {
     this.eid = eid;
   }
 
-  public Long getTime() {
+  public String getTime() {
     return time;
   }
 
-  public void setTime(Long time) {
+  public void setTime(String time) {
     this.time = time;
   }
 

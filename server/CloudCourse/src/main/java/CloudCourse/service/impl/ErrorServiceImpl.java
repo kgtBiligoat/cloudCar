@@ -33,7 +33,7 @@ public class ErrorServiceImpl implements ErrorService {
     DateTransform dateTransform = new DateTransform();
     for(Result res : scanner){
       errorModel.setEid(sysmap.resultMapToRecord(res).getEid());
-      errorModel.setTime(sysmap.resultMapToRecord(res).getTime());
+      errorModel.setTime(dateTransform.DateTransform(String.valueOf(sysmap.resultMapToRecord(res).getTime())));
       errorModel.setAddress(sysmap.resultMapToRecord(res).getAddress());
       errorModel.setLatitude(sysmap.resultMapToRecord(res).getLatitude());
       errorModel.setLongitude(sysmap.resultMapToRecord(res).getLongitude());

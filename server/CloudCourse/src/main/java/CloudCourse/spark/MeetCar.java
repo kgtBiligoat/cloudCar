@@ -1,5 +1,6 @@
 package CloudCourse.spark;
 
+import CloudCourse.hbase.HBaseConf;
 import org.apache.hadoop.hbase.TableName;
 import org.apache.hadoop.hbase.client.*;
 import org.apache.hadoop.hbase.filter.CompareFilter;
@@ -64,7 +65,7 @@ public class MeetCar{
 //                    list.add(map.resultMapToRecord(result).getCount());
                     JSONObject obj=new JSONObject();
                     obj.put("eid", map.resultMapToRecord(result).getEid());
-                    obj.put("eid2", map.resultMapToRecord(result).getEid2());
+                    //obj.put("eid2", map.resultMapToRecord(result).getEid2());
                     obj.put("count", map.resultMapToRecord(result).getCount());
 //                  System.out.println(list);
 

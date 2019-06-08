@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.io.IOException;
 import java.util.List;
 
 @Controller
@@ -22,9 +23,9 @@ public class ErrorController extends BaseController {
   @Autowired
   private ErrorService errorService;
 
-  @RequestMapping(value = "/record",method = {RequestMethod.GET})
+  @RequestMapping(value = "/error",method = {RequestMethod.GET})
   @ResponseBody
-  public CommonReturnType countCar(){
+  public CommonReturnType countCar() throws IOException {
     List<ErrorModel> listErrorModel = errorService.findAllErrorData("s");
     return CommonReturnType.create(listErrorModel);
   }
