@@ -36,7 +36,7 @@ export default {
         }
     },
     methods: {
-        search() {
+        async search() {
         
         },
         getTime(time) {

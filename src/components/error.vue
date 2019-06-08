@@ -1,7 +1,11 @@
 <template>
   <div >    
-    <el-table border style="margin-top: 30px;" :data="data"> 
-          
+    <el-table border style="margin-top: 30px;" :data="data" height="450"> 
+      <el-table-column label="eid" prop=""></el-table-column>
+      <el-table-column label="time" prop=""></el-table-column>
+      <el-table-column label="address" prop=""></el-table-column>
+      <el-table-column label="longtitude" prop=""></el-table-column>
+      <el-table-column label="latitude" prop=""></el-table-column>
     </el-table>  
   </div>
 </template>
@@ -17,7 +21,7 @@ export default {
     }
   },
     methods: {
-      search() {
+      async search() {
         
       }
     }

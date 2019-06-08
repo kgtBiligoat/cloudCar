@@ -19,7 +19,11 @@
             <el-button type="primary" @click="search">查询</el-button>            
         </div>
 
-        <el-table border :data="data"></el-table>
+        <el-table border :data="data" height="450">
+            <el-table-column label="eid" prop="eid"></el-table-column>
+            <el-table-column label="time" prop="time"></el-table-column>
+            <el-table-column label="address" prop="address"></el-table-column>           
+        </el-table>
     </div>
 </template>
 
@@ -37,7 +41,7 @@ export default {
         }
     },
     methods: {
-        search() {
+        async search() {
             console.log(2)
             console.log(this.getTime(this.startTime))
         },

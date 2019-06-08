@@ -5,8 +5,10 @@
       <el-button type="primary" @click="search">查询</el-button>    
 
     </div>      
-    <el-table border style="margin-top: 30px;" :data="data"> 
-          
+    <el-table border style="margin-top: 30px;" :data="data" height="450"> 
+      <el-table-column label="eid1" prop=""></el-table-column>
+      <el-table-column label="eid2" prop=""></el-table-column>
+      <el-table-column label="number" prop=""></el-table-column> 
     </el-table>  
     </div>
 </template>
@@ -23,8 +25,8 @@ export default {
         }
     },
     methods: {
-        search() {
-        
+        async search() {
+          
         }
     }
 }
